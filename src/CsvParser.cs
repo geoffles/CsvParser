@@ -30,7 +30,7 @@ namespace Geoffles.Csv
                 quoted = false;
                 checkQuote = false;
                 count = 0;
-                field = new StringBuilder();
+                field.Clear();
             };
 
             foreach(char c in line)
