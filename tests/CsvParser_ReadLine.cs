@@ -20,6 +20,18 @@ namespace tests
         }
 
         [Fact]
+        public void Readline_MustParseNewLinesInQuotedFields()
+        {
+            var parser = new CsvParser();
+
+            var fields = parser.ReadFields("A field,\" another\r\n field\"").ToList();
+
+            Assert.Equal(2, fields.Count());
+            Assert.Equal("A field", fields[0]);
+            Assert.Equal(" another\r\n field", fields[1]);
+        }
+
+        [Fact]
         public void Readline_MustIgnoreCommasInAnEscape()
         {
             var parser = new CsvParser();
