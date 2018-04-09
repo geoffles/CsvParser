@@ -2,6 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
+    <Version>1.0.1</Version>
+    <Description>Library to parse Comma Separated Value lines into an IEnumerabl&lt;string&gt;, targeting dotnet core.
+
+CsvParser with Readline function. Accommodates cases 4, 5 and 7 of https://tools.ietf.org/html/rfc4180. This release does not presently concern itself with the separation of records, and therefore case 6 is accommodated, but only by virtue of each record being separated already (i.e, this library parses fields only).
+    </Description>
+    <title>CSV Parser</title>
+    <copyright>Geoffrey Lydall</copyright>
+    <projectUrl>https://github.com/geoffles/CsvParser</projectUrl>
+    <authors>Geoffrey Lydall</authors>
+    <owners>Geoffles</owners>
+    <id>Geoffles.Csv</id>
+    <PackageReleaseNotes>Fixed a bug where the last field was incorrectly read if it was empty.</PackageReleaseNotes>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/geoffles/CsvParser/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/geoffles/CsvParser</RepositoryUrl>
+    <PackageTags>csv;dotnet</PackageTags>
   </PropertyGroup>
 
 </Project>

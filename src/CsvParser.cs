@@ -33,8 +33,10 @@ namespace Geoffles.Csv
                 field.Clear();
             };
 
+            char? last = null;
             foreach(char c in line)
             {
+                last = c;
                 if (checkQuote)
                 {
                     checkQuote = false;
@@ -92,7 +94,7 @@ namespace Geoffles.Csv
                 count++;
             }
 
-            if (prev == Delimeter)
+            if (prev == Delimeter || last.HasValue && last == Delimeter)
             {
                 yield return string.Empty;
             }

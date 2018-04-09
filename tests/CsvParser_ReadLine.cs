@@ -20,6 +20,19 @@ namespace tests
         }
 
         [Fact]
+        public void Readline_MustParseFields_WithEmptyLastRecord()
+        {
+            var parser = new CsvParser();
+
+            var fields = parser.ReadFields("A field, another field,").ToList();
+
+            Assert.Equal(3, fields.Count());
+            Assert.Equal("A field", fields[0]);
+            Assert.Equal(" another field", fields[1]);
+            Assert.Equal("", fields[2]);
+        }
+
+        [Fact]
         public void Readline_MustParseNewLinesInQuotedFields()
         {
             var parser = new CsvParser();
